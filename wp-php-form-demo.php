@@ -16,7 +16,9 @@ function cf_shortcode() {
 
 	return ob_get_clean();
 }
-
+add_action('wp_enqueue_scripts', function(){
+	wp_enqueue_style('stylesheet', plugin_dir_url(__FILE__).'style.css');
+});
 add_shortcode( 'contact_form', 'cf_shortcode' );
 
 ?>
